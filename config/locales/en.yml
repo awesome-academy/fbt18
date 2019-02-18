@@ -1,5 +1,26 @@
 en:
-  hello: "Hello world"
   layouts:
     application:
       title: "Framgia Booking Tours"
+    header:
+      login: "login"
+      register: "register"
+      framgiatour: "Framgia tour"
+      home: "Home"
+      about: "about us"
+      offers: "offers"
+      news: "news"
+      contact: "contact"
+      number: "+84 796 265 465"
+      user: "user"
+      account: "account"
+      profile: "profile"
+      setting: "setting"
+      log_out: "log out"
+  home_pages:
+    home:
+      discover: "discover"
+      world: "the world"
+  users:
+    users_controller:
+      not_found: "user not found"
