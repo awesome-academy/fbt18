@@ -1,0 +1,71 @@
+<header class="header">
+  <!-- Top Bar -->
+  <div class="top_bar">
+    <div class="container">
+      <div class="row">
+        <div class="col d-flex flex-row">
+          <div class="phone"><%= t("layouts.header.number") %></div>
+          <div class="social">
+            <ul class="social_list">
+              <li class="social_list_item"><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+              <li class="social_list_item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+              <li class="social_list_item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+              <li class="social_list_item"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+          <div class="user_box ml-auto">
+            <% if user_signed_in? %>
+              <li><%= link_to t("layouts.header.user"), "#" %></li>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <%= t("layouts.header.account") %><b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+              <li><%= link_to t("layouts.header.settings"), edit_user_password_path(current_user) %></li>
+              <li>
+                <%= link_to t("layouts.header.log_out"), destroy_user_session_path,
+                  method: :delete %>
+              </li>
+              </ul>
+            <% else %>
+              <div class="user_box_login user_box_link">
+                <%= link_to new_user_session_path do %>
+                <%= t("layouts.header.login") %>
+                <% end %>
+              </div>
+              <div class="user_box_register user_box_link">
+                <%= link_to new_user_registration_path do %>
+                <%= t("layouts.header.register") %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Main Navigation -->
+  <nav class="main_nav">
+    <div class="container">
+      <div class="row">
+        <div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
+          <div class="logo_container">
+            <div class="logo"><a href="#"><%= t("layouts.header.framgiatour") %></a></div>
+          </div>
+          <div class="main_nav_container ml-auto">
+            <ul class="main_nav_list">
+              <li class="main_nav_item">
+              <%= link_to root_path do %>
+                <%= t("layouts.header.home") %>
+              <% end %>
+              </li>
+              <li class="main_nav_item"><a href="about.html"><%= t("layouts.header.about") %></a></li>
+              <li class="main_nav_item"><a href="offers.html"><%= t("layouts.header.offers") %></a></li>
+              <li class="main_nav_item"><a href="blog.html"><%= t("layouts.header.news") %></a></li>
+              <li class="main_nav_item"><a href="contact.html"><%= t("layouts.header.contact") %></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
